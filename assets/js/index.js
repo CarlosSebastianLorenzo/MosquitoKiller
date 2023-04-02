@@ -5,11 +5,16 @@ let randomSelect = 0;
 setInterval(() => {
     let $img = document.createElement('img')
     $img.setAttribute('src', array[randomSelect])
+    $img.setAttribute('alt', "mosquito")
     randomSelect<4 ? randomSelect++ : randomSelect = 0
+    $img.style.top = `${Math.floor(Math.random() * 100) + 1}%`;
+    $img.style.left = `${Math.floor(Math.random() * 100) + 1}%`;
+    console.log(Math.floor(Math.random() * 100) + 1)
     $container.appendChild($img);
-    console.log($img)
-}, 1500);
+}, 1000);
 
 $container.addEventListener('click', function(e){
     $container.removeChild(e.target);
 });
+
+// Math.floor(Math.random() * 100) + 1
